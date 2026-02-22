@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "message-me",
+    "slug": "message-me",
+    "scheme": "messageme",
+    "web": {
+      "bundler": "metro"
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

@@ -11,6 +11,16 @@ Production-ready SMS scheduling platform with Expo frontend and Express backend.
 ## Runtime requirements
 - Use **Node.js 20 LTS** (or 18 LTS). Node 24 can break Expo SDK 52 and Metro.
 
+## Quick recovery (copy-paste)
+If startup is broken, run this exact sequence from repo root:
+```bash
+npm run reset:deps
+npm install
+npm run doctor
+npm run dev:backend
+npm run dev:frontend
+```
+
 ## Local run commands
 ```bash
 npm install
@@ -56,9 +66,10 @@ If you see Metro/export errors on startup, confirm Node major version first:
 This usually means local dependency graph is stale or was altered by forced audit upgrades.
 1. Pull latest code (`git pull`).
 2. Reset dependencies from repo root: `npm run reset:deps`.
-3. Reinstall: `npm install`.
-4. Start frontend with clean cache: `npm --workspace frontend run start -- --clear`.
-5. Avoid `npm audit fix --force` for this Expo app unless you plan a full SDK upgrade.
+3. Validate environment: `npm run doctor`.
+4. Reinstall: `npm install`.
+5. Start frontend with clean cache: `npm --workspace frontend run start -- --clear`.
+6. Avoid `npm audit fix --force` for this Expo app unless you plan a full SDK upgrade.
 
 ### Backend `drizzle-orm/sqlite3` export error
 If you still see this, your local code is outdated.

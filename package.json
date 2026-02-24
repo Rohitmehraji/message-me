@@ -7,11 +7,13 @@
   ],
   "scripts": {
     "preinstall": "node scripts/check-node.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "reset:deps": "node scripts/reset-deps.mjs",
+    "reinstall": "npm run reset:deps && npm install",
     "dev:backend": "npm --workspace backend run dev",
     "dev:frontend": "npm --workspace frontend run start",
     "build": "npm run -ws build",
-    "lint": "npm run -ws lint",
-    "reset:deps": "node scripts/reset-deps.mjs"
+    "lint": "npm run -ws lint"
   },
   "engines": {
     "node": "18.x || 20.x"

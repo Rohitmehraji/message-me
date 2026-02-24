@@ -1,0 +1,7 @@
+node_modules
+*.sqlite
+backend/dist
+frontend/.expo
+frontend/dist
+.DS_Store
+.env

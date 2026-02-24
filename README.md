@@ -8,6 +8,9 @@ Production-ready SMS scheduling platform with Expo frontend and Express backend.
 - **Persistence (Drizzle + SQLite, PostgreSQL-ready structure):** Contacts, devices, campaigns, sms_logs schema with campaign pacing and time-slot fields.
 - **Delivery engine:** Provider abstraction (Twilio or Mock via env) plus cron scheduler to process scheduled campaigns in controlled batches.
 
+## Runtime requirements
+- Use **Node.js 20 LTS** (or 18 LTS). Node 24 can break Expo SDK 52 and Metro.
+
 ## Local run commands
 ```bash
 npm install
@@ -42,6 +45,12 @@ CORS_ORIGIN=http://localhost:8081
 3. Hard refresh browser/app.
 4. Confirm frontend env `EXPO_PUBLIC_API_URL` points to backend.
 
+
+
+### Node version mismatch
+If you see Metro/export errors on startup, confirm Node major version first:
+- `node -v` should be `v18.x` or `v20.x`
+- If using Node 24, switch to Node 20 LTS and reinstall dependencies.
 
 ### Metro `TerminalReporter` export error
 This usually means local dependency graph is stale or was altered by forced audit upgrades.
